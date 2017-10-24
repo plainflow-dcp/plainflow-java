@@ -1,3 +1,7 @@
+Version 2.0.0-p1 (October 24th, 2017)
+=====================================
+
+  * The library has been forked to work with Plainflow.
 
 Version 2.0.0 (April 4th, 2017)
 ===============================

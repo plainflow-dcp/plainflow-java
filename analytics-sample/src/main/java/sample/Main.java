@@ -1,7 +1,7 @@
 package sample;
 
-import com.segment.analytics.Analytics;
-import com.segment.analytics.messages.TrackMessage;
+import com.plainflow.analytics.Analytics;
+import com.plainflow.analytics.messages.TrackMessage;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;

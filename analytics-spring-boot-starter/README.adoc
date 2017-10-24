@@ -1,7 +1,7 @@
-= Spring Boot starter for Segment Analytics
+= Spring Boot starter for Plainflow Analytics
 
 This module provides a link:https://projects.spring.io/spring-boot/[Spring Boot]
-starter for the Segment client.
+starter for the Plainflow client.
 
 == Usage
 
@@ -9,19 +9,19 @@ For Maven, include this dependency in your `pom.xml`:
 
 ```xml
 <dependency>
-  <groupId>com.segment.analytics.java</groupId>
+  <groupId>com.plainflow.analytics.java</groupId>
   <artifactId>analytics-spring-boot-starter</artifactId>
-  <version>${segment.analytics.version}</version>
+  <version>${plainflow.analytics.version}</version>
 </dependency>
 ```
 
 For Gradle,
 
 ```bash
-compile 'com.segment.analytics.java:analytics-spring-boot-starter:+'
+compile 'com.plainflow.analytics.java:analytics-spring-boot-starter:+'
 ```
 
 In your Spring Boot configuration (`application.properties`, environment, or
-similar), provide the property `segment.analytics.writeKey`. The
+similar), provide the property `plainflow.analytics.secretKey`. The
 autoconfiguration will register an `Analytics` bean in the Spring context
 ready for use.

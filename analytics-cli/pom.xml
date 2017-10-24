@@ -5,12 +5,12 @@
 
   <parent>
     <artifactId>analytics-parent</artifactId>
-    <groupId>com.segment.analytics.java</groupId>
+    <groupId>com.plainflow.analytics.java</groupId>
     <version>2.0.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>analytics-cli</artifactId>
-  <name>Analytics Java CLI</name>
+  <name>Plainflow Java CLI</name>
 
   <dependencies>
     <dependency>
@@ -18,7 +18,7 @@
       <artifactId>kotlin-stdlib</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.segment.analytics.java</groupId>
+      <groupId>com.plainflow.analytics.java</groupId>
       <artifactId>analytics</artifactId>
       <version>${project.version}</version>
     </dependency>

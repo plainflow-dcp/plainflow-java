@@ -1,11 +1,11 @@
 package sample;
 
-import com.segment.analytics.Analytics;
-import com.segment.analytics.Callback;
-import com.segment.analytics.MessageTransformer;
-import com.segment.analytics.Plugin;
-import com.segment.analytics.messages.Message;
-import com.segment.analytics.messages.MessageBuilder;
+import com.plainflow.analytics.Analytics;
+import com.plainflow.analytics.Callback;
+import com.plainflow.analytics.MessageTransformer;
+import com.plainflow.analytics.Plugin;
+import com.plainflow.analytics.messages.Message;
+import com.plainflow.analytics.messages.MessageBuilder;
 import java.util.concurrent.Phaser;
 
 /**
@@ -15,7 +15,7 @@ import java.util.concurrent.Phaser;
  *
  * <pre><code>
  * BlockingFlush blockingFlush = BlockingFlush.create();
- * Analytics analytics = Analytics.builder(writeKey)
+ * Analytics analytics = Analytics.builder(secretKey)
  *      .plugin(blockingFlush)
  *      .build();
  *

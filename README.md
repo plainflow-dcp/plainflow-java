@@ -1,18 +1,18 @@
-analytics-java
+Plainflow-java
 ==============
 
-analytics-java is a Java client for [Segment](https://segment.com)
+Plainflow-java is a Java client for [Plainflow](https://www.plainflow.com)
 
 ## Documentation
 
-Documentation is available at [https://segment.com/libraries/java](https://segment.com/libraries/java).
+Documentation is available at [https://www.plainflow.com/docs/developers/sdk/java](https://www.plainflow.com/docs/developers/sdk/java).
 
 *Add to `pom.xml`:*
 
 ```xml
 <dependency>
-  <groupId>com.segment.analytics.java</groupId>
-  <artifactId>analytics</artifactId>
+  <groupId>com.plainflow.analytics.java</groupId>
+  <artifactId>plainflow</artifactId>
   <version>LATEST</version>
 </dependency>
 ```
@@ -20,7 +20,7 @@ Documentation is available at [https://segment.com/libraries/java](https://segme
 *or if you're using Gradle:*
 
 ```bash
-compile 'com.segment.analytics.java:analytics:+'
+compile 'com.plainflow.analytics.java:plainflow:+'
 ```
 
 ## Snapshots
@@ -54,21 +54,11 @@ repositories {
 
 ## License
 
-```
-WWWWWW||WWWWWW
- W W W||W W W
-      ||
-    ( OO )__________
-     /  |           \
-    /o o|    MIT     \
-    \___/||_||__||_|| *
-         || ||  || ||
-        _||_|| _||_||
-       (__|__|(__|__|
-
 The MIT License (MIT)
 
 Copyright (c) 2014 Segment, Inc.
+
+Copyright (c) 2017 Plainflow, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

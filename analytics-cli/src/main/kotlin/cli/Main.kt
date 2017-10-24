@@ -2,26 +2,26 @@ package cli
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.segment.analytics.Analytics
-import com.segment.analytics.Log
-import com.segment.analytics.messages.*
+import com.plainflow.analytics.Analytics
+import com.plainflow.analytics.Log
+import com.plainflow.analytics.messages.*
 import org.docopt.Docopt
 import java.text.SimpleDateFormat
 import java.util.*
 
 val usage = """
-Analytics Java CLI
+Plainflow Java CLI
 
 Usage:
-  analytics track <event> [--properties=<properties>] [--context=<context>] [--writeKey=<writeKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
-  analytics screen <name> [--properties=<properties>] [--context=<context>] [--writeKey=<writeKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
-  analytics page <name> [--properties=<properties>] [--context=<context>] [--writeKey=<writeKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
-  analytics identify [--traits=<traits>] [--context=<context>] [--writeKey=<writeKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
-  analytics group --groupId=<groupId> [--traits=<traits>] [--properties=<properties>] [--context=<context>] [--writeKey=<writeKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
-  analytics alias --userId=<userId> --previousId=<previousId> [--traits=<traits>] [--properties=<properties>] [--context=<context>] [--writeKey=<writeKey>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
+  plainflow track <event> [--properties=<properties>] [--context=<context>] [--secretKey=<secretKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
+  plainflow screen <name> [--properties=<properties>] [--context=<context>] [--secretKey=<secretKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
+  plainflow page <name> [--properties=<properties>] [--context=<context>] [--secretKey=<secretKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
+  plainflow identify [--traits=<traits>] [--context=<context>] [--secretKey=<secretKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
+  plainflow group --groupId=<groupId> [--traits=<traits>] [--properties=<properties>] [--context=<context>] [--secretKey=<secretKey>] [--userId=<userId>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
+  plainflow alias --userId=<userId> --previousId=<previousId> [--traits=<traits>] [--properties=<properties>] [--context=<context>] [--secretKey=<secretKey>] [--anonymousId=<anonymousId>] [--integrations=<integrations>] [--timestamp=<timestamp>]
 
-  analytics -h | --help
-  analytics --version
+  plainflow -h | --help
+  plainflow --version
 
 Options:
   -h --help     Show this screen.
@@ -112,20 +112,20 @@ fun main(vararg rawArgs: String) {
         }
     }
 
-    var writeKey = args["--writeKey"]
-    if (writeKey == null) {
-        writeKey = System.getenv("SEGMENT_WRITE_KEY")
+    var secretKey = args["--secretKey"]
+    if (secretKey == null) {
+        secretKey = System.getenv("PLAINFLOW_SECRET_KEY")
     }
 
-    val analytics = Analytics.builder(writeKey as String)
+    val plainflow = Analytics.builder(secretKey as String)
             .log(stdout)
             .flushQueueSize(1)
             .build()
     try {
-        analytics.enqueue(message)
+        plainflow.enqueue(message)
         Thread.sleep(2 * 1000)
     } finally {
-        analytics.shutdown()
+        plainflow.shutdown()
     }
 }
 
