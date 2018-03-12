@@ -5,7 +5,7 @@ Plainflow-java is a Java client for [Plainflow](https://www.plainflow.com)
 
 ## Documentation
 
-Documentation is available at [https://www.plainflow.com/docs/developers/sdk/java](https://www.plainflow.com/docs/developers/sdk/java).
+Documentation is available at [https://www.plainflow.com/docs/developers/data-tracking-libraries/java](https://www.plainflow.com/docs/developers/data-tracking-libraries/java).
 
 *Add to `pom.xml`:*
 
